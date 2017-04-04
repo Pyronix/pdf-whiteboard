@@ -1,24 +1,31 @@
-# README
+## PDF Whiteboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Whiteboard where you can upload a PDF which will be converted to images.
+You can Create, View, Edit, Download and Delete PDFs
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Ruby 2.0.0 or later
 
-* System dependencies
+RMagick see:  https://github.com/rmagick/rmagick
 
-* Configuration
+## Installation
 
-* Database creation
+```
+git clone https://github.com/Pyronix/pdf-whiteboard.git
+cd pdf-whiteboard
+bundle install
+bin/rails db:migrate
+```
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+```
+bin/rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Navigate to http://localhost:3000
+````
+Username: root
+Password: 123
+````

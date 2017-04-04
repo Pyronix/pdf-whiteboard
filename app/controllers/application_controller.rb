@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  http_basic_authenticate_with name: "root", password: "CoE6SV4r"
+  http_basic_authenticate_with name: "root", password: "123"
 
   before_action :init_navigation
 
