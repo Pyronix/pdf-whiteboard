@@ -1,0 +1,46 @@
+<div class="row carousel">
+  <div class="col-sm-8">
+    <div class="col-xs-12" id="slider">
+      <!-- Top part of the slider -->
+      <div class="row">
+        <div class="col-sm-12" id="carousel-bounding-box">
+          <div class="carousel slide" id="myCarousel">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+
+              <div class="carousel-inner" role="listbox">
+                <% images.each_with_index do |url, index | %>
+                    <div class="item <%= index == 0 ? 'active' : '' %>" data-slide-number="<%= index.to_s %>">
+                      <img src="<%= url %>">
+                    </div>
+                <% end %>
+              </div>
+
+            </div>
+            <!-- Carousel nav -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Slider-->
+
+  <div class="col-sm-4" id="slider-thumbs">
+    <!-- Bottom switcher of slider -->
+    <ul class="hide-bullets">
+      <% images.each_with_index do |url, index | %>
+          <li class="col-sm-6">
+            <a class="thumbnail" id="carousel-selector-<%= index.to_s %>">
+              <img src="<%= url %>">
+            </a>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

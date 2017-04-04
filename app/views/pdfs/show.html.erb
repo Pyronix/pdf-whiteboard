@@ -1,0 +1,19 @@
+<% @title = "#{@pdf.name}" %>
+<% @caption = '' %>
+<% @actions = [
+    {
+        :label => "<i class='glyphicon glyphicon-pencil'></i> Edit",
+        :url => edit_pdf_path(@pdf)
+    },
+    {
+        :label => "<i class='glyphicon glyphicon-download-alt'></i> Download",
+        :url => pdf_download_path(@pdf),
+        :target => '_blank'
+    },
+    {
+        :html => link_to("<small><small><i class='glyphicon glyphicon-remove'></i> Delete</small></small>".html_safe, @pdf, data: {:confirm => 'Are you sure?'}, :method => :delete)
+    }
+] %>
+
+<%= render 'image_carousel', images: @pdf.pdf_pages.map { |page| pdf_show_page_url(@pdf, page.page) } %>
+

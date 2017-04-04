@@ -1,0 +1,18 @@
+<% @title="All PDFs" %>
+<% @caption="all of them" %>
+<div class="row">
+  <% @pdfs.each do |pdf| %>
+      <div class="col-lg-3 col-md-4 col-xs-6 thumb image-container">
+        <ul class="pagination">
+          <li><a href="<%= url_for pdf %>"><i class='glyphicon glyphicon-eye-open'></i></a></li>
+          <li><a href="<%= url_for edit_pdf_path(pdf) %>"><i class='glyphicon glyphicon-pencil'></i></a></li>
+          <li><a href="<%= url_for pdf_download_path(pdf) %>" target="_blank"><i class='glyphicon glyphicon-download-alt'></i></a></li>
+          <li><%= link_to "<i class='glyphicon glyphicon-remove'></i>".html_safe, pdf, method: :delete, data: {confirm: 'Are you sure?'} %></li>
+        </ul>
+        <a class="thumbnail" href="<%= url_for pdf %>">
+          <h4><%= pdf.name %></h4>
+          <img class="img-responsive" src="<%= pdf_show_page_url(pdf, 0) %>" alt="">
+        </a>
+      </div>
+  <% end %>
+</div>
